@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Image_prediction</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" 
+	type="text/css" 
+	href="{{ url_for('static', filename='bootstrap.min.css') }}" 
+	media="all">
+
+	<script type="text/javascript" 
+	src="{{ url_for('static', filename='bootstrap.min.js') }}"> 
+	</script>
+
+	<!-- Goggle Font -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' 
+	rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<header>
+	<div id="homeFullScreen">
+		<div class="header-text">
+			<h1>Classified Class: {{ value }}</h1>
+	</div><!-- End homeFullScreen -->
+</header><!-- End Header -->

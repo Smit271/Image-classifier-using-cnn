@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Image_prediction</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view.css') }}" media="all">
+<script type="text/javascript" src="{{ url_for('static', filename='view.js') }}"> </script>
+
+</head>
+<body id="main_body" >
+	
+	<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a>Image_prediction</a></h1>
+		<form id="form_20316" class="appnitro" enctype="multipart/form-data" method="POST" 
+		action="http://0:5555/predict">
+					<div class="form_description">
+			<h2>Image_prediction</h2>
+			<p>Please upload image from below topics:<br>
+				1 > Building<br>
+				2 > Forest<br>
+				3 > Glacier<br>
+				4 > Mountain<br>
+				5 > Sea<br>
+				6 > Street<br>
+
+				I will give with 95% accuracy which type from above image you uploaded.</p>
+		</div>						
+			<ul >
+			
+					<li id="li_1" >
+		<label class="description" for="element_1">Upload a File </label>
+		<div>
+			<input id="element_1" name="in_image" class="element file" type="file"/> 
+		</div>  
+		</li>
+			
+					<li class="buttons">
+			    <input type="hidden" name="form_id" value="20316" />
+			    
+				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+		</li>
+			</ul>
+		</form>	
+		<div id="footer">
+			Copyright  @<a href="https://github.com/Smit271">Smitkumar Panchal</a>
+		</div>
+	</div>
+	<img id="bottom" src="bottom.png" alt="">
+	</body>
+</html>
