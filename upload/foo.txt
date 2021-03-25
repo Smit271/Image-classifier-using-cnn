@@ -1,0 +1,1 @@
+# In here the image uploaded from client will be stored then processed and then will automatically delete to avoid storage problem.
