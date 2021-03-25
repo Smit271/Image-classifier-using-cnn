@@ -23,7 +23,7 @@
 ## Requirements
 
 - First run following command to download external library
-- python3 -m pip3 install -r requirement.txt
+- python3 -m pip install -r requirement.txt
 - After completed go to Run part.
 
 
