@@ -2,7 +2,7 @@
 import os
 import flask
 import uuid
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect, url_for
 from werkzeug.utils import secure_filename
 from flask_cors import CORS, cross_origin
 from time import gmtime, strftime
@@ -13,6 +13,8 @@ import numpy as np
 app = flask.Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+app.config['SECRET_KEY'] = 'sjbcxzsdc15xz6czc'
+
 
 model = tf.keras.models.load_model('./model_best.h5')
 classes = ['building', 'forest', 'glacier', 'mountain', 'sea', 'street']
@@ -47,8 +49,11 @@ def predict():
 	    
         os.remove(os.path.join('uploads', f"{filename}.{in_image.filename.split('.')[-1]}"))
         output.capitalize()
-	    
-    return flask.render_template("predict.html", value=output)
-    
+
+        if output:
+            flash(f'Classified as {output.capitalize()}!', 'success')
+            return flask.render_template("index.html", value=output)
+
+    return flask.render_template("index.html", value=output) 
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port=5555, debug=True)
