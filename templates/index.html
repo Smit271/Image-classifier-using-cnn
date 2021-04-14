@@ -1,7 +1,30 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<style>
+		.alert {
+		  padding: 20px;
+		  background-color: #f44336;
+		  color: white;
+		}
+
+		.closebtn {
+		  margin-left: 15px;
+		  color: white;
+		  font-weight: bold;
+		  float: right;
+		  font-size: 22px;
+		  line-height: 20px;
+		  cursor: pointer;
+		  transition: 0.3s;
+		}
+
+		.closebtn:hover {
+		  color: black;
+		}
+	</style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <title>Image_prediction</title>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view.css') }}" media="all">
 <script type="text/javascript" src="{{ url_for('static', filename='view.js') }}"> </script>
@@ -11,6 +34,21 @@
 	
 	<img id="top" src="top.png" alt="">
 	<div id="form_container">
+		<div class="col-md-8">
+        	<!-- Making messages if login/ register is successful or not -->
+        	{% with messages = get_flashed_messages(with_categories=true) %}
+        		{% if messages %}
+        			{% for category, message in messages %}
+        				<div class = "alert alert-{{ category }}">
+        					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        					<strong>{{ message }}</strong>
+        				</div>
+        			{% endfor %}
+        		{% endif %}
+        	{% endwith %}
+          {% block content %}{% endblock %}
+        	
+    	</div>
 	
 		<h1><a>Image_prediction</a></h1>
 		<form id="form_20316" class="appnitro" enctype="multipart/form-data" method="POST" 
