@@ -32,7 +32,6 @@ def get_output(image_path):
 @app.route('/', methods=['GET'])
 @cross_origin()
 def any():      
-	
 	return render_template('index.html')
 	
 	
@@ -47,7 +46,7 @@ def predict():
 	    
         output = get_output(os.path.join('uploads', f"{filename}.{in_image.filename.split('.')[-1]}"))
 	    
-        os.remove(os.path.join('uploads', f"{filename}.{in_image.filename.split('.')[-1]}"))
+        # os.remove(os.path.join('uploads', f"{filename}.{in_image.filename.split('.')[-1]}"))
         output.capitalize()
 
         if output:
@@ -55,5 +54,16 @@ def predict():
             return flask.render_template("index.html", value=output)
 
     return flask.render_template("index.html", value=output) 
+
+@app.route('/about')
+def about():      
+	return render_template('about.html')
+
+
+@app.route('/other_work')
+def other():      
+	return render_template('other.html')
+
+
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port=5555, debug=True)
