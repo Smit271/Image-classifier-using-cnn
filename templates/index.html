@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -10,9 +9,12 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-<!--   Favicons -->
+
   <link href="{{  url_for('static', filename = '/favicon.ico') }}" rel="icon">
   <link href="{{  url_for('static', filename = '/favicon.ico') }}" rel="apple-touch-icon">
+  <!-- Favicons
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
   <!-- Google Fonts -->
   <link
@@ -40,8 +42,6 @@
   <!-- Template Main CSS File -->
   <link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet">
 
-=======
->>>>>>> 60620d94160f681778a66aeb0f3cee4c3125e18a
 	<style>
 		.alert {
 		  padding: 20px;
@@ -64,10 +64,6 @@
 		  color: black;
 		}
 	</style>
-<<<<<<< HEAD
-
-=======
->>>>>>> 60620d94160f681778a66aeb0f3cee4c3125e18a
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <title>Image_prediction</title>
@@ -112,45 +108,6 @@
           {% block content %}{% endblock %}
         	
     	</div>
-<<<<<<< HEAD
-		
-=======
-	
-		<h1><a>Image_prediction</a></h1>
-		<form id="form_20316" class="appnitro" enctype="multipart/form-data" method="POST" 
-		action="http://0:5555/predict">
-					<div class="form_description">
-			<h2>Image_prediction</h2>
-			<p>Please upload image from below topics:<br>
-				1 > Building<br>
-				2 > Forest<br>
-				3 > Glacier<br>
-				4 > Mountain<br>
-				5 > Sea<br>
-				6 > Street<br>
-
-				I will give with 95% accuracy which type from above image you uploaded.</p>
-		</div>						
-			<ul >
-			
-					<li id="li_1" >
-		<label class="description" for="element_1">Upload a File </label>
-		<div>
-			<input id="element_1" name="in_image" class="element file" type="file"/> 
-		</div>  
-		</li>
-			
-					<li class="buttons">
-			    <input type="hidden" name="form_id" value="20316" />
-			    
-				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-		</li>
-			</ul>
-		</form>	
-		<div id="footer">
-			Copyright  @<a href="https://github.com/Smit271">Smitkumar Panchal</a>
-		</div>
->>>>>>> 60620d94160f681778a66aeb0f3cee4c3125e18a
 	</div>
 	<img id="bottom" src="bottom.png" alt="">
 
@@ -169,7 +126,7 @@
 
 	  <div class="container">
 		<form enctype="multipart/form-data" method="POST" 
-			action="http://0:5555/predict">
+			action="/predict">
 		<div class="form-group">
 		  <input  name="in_image" type="file" class="form-control-file">
 		  <button type="submit" class="col-sm-2 col-form-label">Upload</button>
