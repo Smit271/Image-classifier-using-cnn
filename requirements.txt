@@ -1,7 +1,6 @@
 Flask==1.1.2
 Flask-Cors==3.0.10
 flatbuffers==1.12
-h5py==2.10.0
 Jinja2==3.0.1
 Keras-Preprocessing==1.1.2
 numpy==1.19.5
