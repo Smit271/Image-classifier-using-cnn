@@ -31,14 +31,14 @@ def get_output(image_path):
 
 @app.route('/', methods=['GET'])
 @cross_origin()
-def any():      
+def any():
+	if request.method == 'POST':
+		upload_image()
 	return render_template('index.html')
 	
 	
-@app.route('/predict', methods=['POST'])
-@cross_origin()
-def predict():
-    if request.method == 'POST':
+def upload_image():
+    if request.files:
         in_image = request.files["in_image"]
         
         filename = str(uuid.uuid4()) + '_' + str(strftime("%Y_%m_%d-%H_%M_%S", gmtime()))
@@ -51,9 +51,9 @@ def predict():
 
         if output:
             flash(f'Classified as {output.capitalize()}!', 'success')
-            return flask.render_template("index.html", value=output)
+            return flask.render_template("index.html")
 
-    return flask.render_template("index.html", value=output) 
+    return flask.render_template("index.html") 
 
 @app.route('/about')
 def about():      
