@@ -29,9 +29,9 @@ def get_output(image_path):
     
     return classes[preds[0]]
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 @cross_origin()
-def any():
+def home():
 	if request.method == 'POST':
 		upload_image()
 	return render_template('index.html')
@@ -66,4 +66,4 @@ def other():
 
 
 if __name__ == "__main__":
-	app.run(host="0.0.0.0", port=5555, debug=True)
+	app.run(debug=True)
