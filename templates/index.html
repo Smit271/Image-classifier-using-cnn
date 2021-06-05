@@ -1,6 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+<<<<<<< HEAD
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Image Classifier</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <!-- <link type = "text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ -->
+  <link type="text/css" href="{{ url_for('static', filename = '/vendor/bootstrap/css/bootstrap.min.css') }}"
+    rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename = '/vendor/boxicons/css/boxicons.min.css') }}"
+    rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename = '/vendor/glightbox/css/glightbox.min.css') }}"
+    rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename = '/vendor/swiper/swiper-bundle.min.css') }}"
+    rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename = '/vendor/bootstrap-icons/bootstrap-icons.css') }}"
+    rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet">
+
+=======
+>>>>>>> 60620d94160f681778a66aeb0f3cee4c3125e18a
 	<style>
 		.alert {
 		  padding: 20px;
@@ -23,14 +64,36 @@
 		  color: black;
 		}
 	</style>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 60620d94160f681778a66aeb0f3cee4c3125e18a
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <title>Image_prediction</title>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view.css') }}" media="all">
-<script type="text/javascript" src="{{ url_for('static', filename='view.js') }}"> </script>
+<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view.css') }}" media="all"> -->
 
 </head>
 <body id="main_body" >
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand">Explore</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+		  <ul class="navbar-nav">
+			<li class="nav-item active">
+			  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="/about">About Me</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="/other_work">My other works</a>
+			</li>
+		  </ul>
+		</div>
+	  </nav>
 	
 	<img id="top" src="top.png" alt="">
 	<div id="form_container">
@@ -49,6 +112,9 @@
           {% block content %}{% endblock %}
         	
     	</div>
+<<<<<<< HEAD
+		
+=======
 	
 		<h1><a>Image_prediction</a></h1>
 		<form id="form_20316" class="appnitro" enctype="multipart/form-data" method="POST" 
@@ -84,7 +150,67 @@
 		<div id="footer">
 			Copyright  @<a href="https://github.com/Smit271">Smitkumar Panchal</a>
 		</div>
+>>>>>>> 60620d94160f681778a66aeb0f3cee4c3125e18a
 	</div>
 	<img id="bottom" src="bottom.png" alt="">
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+		  <h1 class="display-4">Image_Classification</h1>
+		  <p class="lead"><p>Please upload image from below topics:<br>
+			1 > Building<br>
+			2 > Forest<br>
+			3 > Glacier<br>
+			4 > Mountain<br>
+			5 > Sea<br>
+			6 > Street<br></p>
+		</div>
+	  </div>
+
+	  <div class="container">
+		<form enctype="multipart/form-data" method="POST" 
+			action="http://0:5555/predict">
+		<div class="form-group">
+		  <input  name="in_image" type="file" class="form-control-file">
+		  <button type="submit" class="col-sm-2 col-form-label">Upload</button>
+		</div>
+	  </form>
+
+	  </div>
+	
+	  <!-- ======= Footer ======= -->
+	<footer id="footer" class="jumbotron">
+		<div class="container">
+		<h3>Thank you for the visiting the website.</h3>
+		<p>For more information you can contact me.</p>
+		<div class="social-links">
+			<a href="https://twitter.com/SmitPanchal271" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+			<a href="https://www.facebook.com/profile.php?id=100011663110665&viewas=&show_switched_toast=false"
+			class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+			<a href="https://www.instagram.com/smitpanchal271/" class="instagram" target="_blank"><i
+				class="bi bi-instagram"></i></a>
+			<a href="https://www.linkedin.com/in/smitkumar-panchal-44162b1a0" class="linkedin" target="_blank"><i
+				class="bi bi-linkedin"></i></a>
+		</div>
+		<div class="copyright">
+			&copy; Copyright <strong><a href="https://github.com/Smit271"><span>Smitkumar Panchal</span></a></strong>. All
+			Rights Reserved
+		</div>
+		<div class="credits">
+		</div>
+		</div>
+	</footer><!-- End Footer -->	
+
+	<!-- Vendor JS Files -->
+	<script src="{{ url_for('static', filename = 'vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'vendor/glightbox/js/glightbox.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'vendor/php-email-form/validate.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'vendor/purecounter/purecounter.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'vendor/swiper/swiper-bundle.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'vendor/waypoints/noframework.waypoints.js') }}"></script>
+
+	<!-- Template Main JS File -->
+	<script src="{{ url_for('static', filename = 'view.js') }}"></script>
 	</body>
 </html>
